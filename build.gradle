@@ -29,8 +29,7 @@ dependencies {
 }
 
 shadowJar {
-    relocate('co.aikar.commands', 'com.xbaimiao.test.libs.acf')
-    relocate('com.cryptomorin.xseries', 'com.xbaimiao.test.libs.xseries')
+    relocate('top.mcplugin.lib', 'com.xbaimiao.test.shadow')
     exclude("LICENSE")
     exclude("META-INF/**")
     minimize()
