@@ -1,0 +1,7 @@
+main: com.xbaimiao.test.Test
+name: Test
+version: 1.0.0
+author: xbaimiao
+api-version: 1.13
+commands:
+  test:
