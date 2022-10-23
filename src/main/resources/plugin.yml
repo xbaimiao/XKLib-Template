@@ -1,7 +1,5 @@
 main: com.xbaimiao.test.Test
 name: Test
-version: 1.0.0
+version: '${version}'
 author: xbaimiao
 api-version: 1.13
-commands:
-  test:
