@@ -21,14 +21,6 @@ tasks.withType(JavaCompile) {
     options.setEncoding("UTF-8")
 }
 
-task updatePlugin() {
-    def file = file('src\\main\\resources\\plugin.yml')
-    def text = file.text
-    text = text.replace('{ group }', '' + project.group + '.' + project.name)
-    text = text.replace('{ name }', '' + project.name)
-    file.write text
-}
-
 dependencies {
     implementation "top.mcplugin.lib:module-main:1.0.4-16"
     implementation "top.mcplugin.lib:module-lang:1.0.4-16"
@@ -39,6 +31,11 @@ dependencies {
 }
 
 shadowJar {
+    def file = file('src\\main\\resources\\plugin.yml')
+    def text = file.text
+    text = text.replace('{ group }', '' + project.group + '.' + project.name)
+    text = text.replace('{ name }', '' + project.name)
+    file.write text
     relocate('top.mcplugin.lib', project.group + ".shadow")
     relocate('com.cryptomorin.xseries', project.group + ".shadow")
     exclude("LICENSE")
