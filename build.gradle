@@ -43,8 +43,8 @@ shadowJar {
     text = text.replace('{ group }', '' + project.group + '.' + project.name)
     text = text.replace('{ name }', '' + project.name)
     file.write text
-    relocate('top.mcplugin.lib', project.group + ".shadow")
-    relocate('com.cryptomorin.xseries', project.group + ".shadow")
+    relocate('top.mcplugin.lib', project.group + ".lib.shadow")
+    relocate('com.cryptomorin.xseries', project.group + ".xseries.shadow")
     exclude("LICENSE")
     exclude("META-INF/**")
 }
