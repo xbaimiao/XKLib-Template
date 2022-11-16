@@ -22,17 +22,18 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
-    implementation "top.mcplugin.lib:module-main:1.0.4-beta27"
-//    implementation "top.mcplugin.lib:module-lang:1.0.4-beta27"
-//    implementation "top.mcplugin.lib:module-nacos:1.0.4-beta27"
-//    implementation "top.mcplugin.lib:module-command:1.0.4-beta27"
+    implementation "top.mcplugin.lib:module-main:1.0.4-beta28"
+//    implementation "top.mcplugin.lib:module-lang:1.0.4-beta28"
+//    implementation "top.mcplugin.lib:module-nacos:1.0.4-beta28"
+//    implementation "top.mcplugin.lib:module-command:1.0.4-beta28"
     implementation "com.github.cryptomorin:XSeries:9.1.0"
     // item-nbt
 //    implementation "de.tr7zw:item-nbt-api:2.10.0"
     // ormlite
 //    implementation 'com.j256.ormlite:ormlite-core:6.1'
 //    implementation 'com.j256.ormlite:ormlite-jdbc:6.1'
-//    implementation "top.mcplugin.lib:module-ormlite:1.0.4-beta27"
+//    implementation 'com.zaxxer:HikariCP:4.0.3'
+//    implementation "top.mcplugin.lib:module-ormlite:1.0.4-beta28"
     compileOnly 'public:paper:1.16.5'
     compileOnly fileTree('libs')
 }
@@ -43,8 +44,9 @@ shadowJar {
     text = text.replace('{ group }', '' + project.group + '.' + project.name)
     text = text.replace('{ name }', '' + project.name)
     file.write text
-    relocate('top.mcplugin.lib', project.group + ".lib.shadow")
-    relocate('com.cryptomorin.xseries', project.group + ".xseries.shadow")
+    relocate('top.mcplugin.lib', project.group + ".shadow.lib")
+    relocate('com.cryptomorin.xseries', project.group + ".shadow.xseries")
+    relocate('com.zaxxer.hikari', project.group + ".shadow.hikari")
     exclude("LICENSE")
     exclude("META-INF/**")
 }
