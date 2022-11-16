@@ -47,6 +47,8 @@ shadowJar {
     relocate('top.mcplugin.lib', project.group + ".shadow.lib")
     relocate('com.cryptomorin.xseries', project.group + ".shadow.xseries")
     relocate('com.zaxxer.hikari', project.group + ".shadow.hikari")
+    relocate('com.j256.ormlite', project.group + ".shadow.ormlite")
+    relocate('org.slf4j', project.group + ".shadow.slf4j")
     exclude("LICENSE")
     exclude("META-INF/**")
 }
