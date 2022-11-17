@@ -44,7 +44,7 @@ shadowJar {
     text = text.replace('{ group }', '' + project.group + '.' + project.name)
     text = text.replace('{ name }', '' + project.name)
     file.write text
-    relocate('top.mcplugin.lib', project.group + ".shadow.lib")
+    relocate('top.mcplugin.lib', project.group + ".mcplugin.lib")
     relocate('com.cryptomorin.xseries', project.group + ".shadow.xseries")
     relocate('com.zaxxer.hikari', project.group + ".shadow.hikari")
     relocate('com.j256.ormlite', project.group + ".shadow.ormlite")
