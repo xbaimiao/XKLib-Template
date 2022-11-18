@@ -32,6 +32,7 @@ dependencies {
     implementation "com.github.cryptomorin:XSeries:9.1.0"
     // item-nbt
 //    implementation "de.tr7zw:item-nbt-api:2.10.0"
+//    implementation "de.tr7zw:item-nbt-api:2.11.0-20221110.225012-31"
     // ormlite
 //    implementation 'com.j256.ormlite:ormlite-core:6.1'
 //    implementation 'com.j256.ormlite:ormlite-jdbc:6.1'
