@@ -1,5 +1,5 @@
-main: { group }
-name: { name }
+main: com.xbaimiao.template.Template
+name: Template
 version: '${version}'
 author: xbaimiao
 api-version: 1.13

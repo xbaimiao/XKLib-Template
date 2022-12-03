@@ -1,16 +1,14 @@
-package com.xbaimiao.template;
+package com.xbaimiao.template
 
-import top.mcplugin.lib.Plugin;
+import top.mcplugin.lib.Plugin
 
-@SuppressWarnings("unused")
-public class Template extends Plugin {
-
-    public Template() {
-        super.ignoreScan("shadow");
+@Suppress("unused")
+class Template : Plugin() {
+    init {
+        super.ignoreScan("shadow")
     }
 
-    @Override
-    public void enable() {
+    override fun enable() {
 
     }
 
