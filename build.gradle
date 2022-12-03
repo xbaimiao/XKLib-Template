@@ -32,6 +32,7 @@ tasks.withType(JavaCompile) {
 dependencies {
     implementation "com.github.cryptomorin:XSeries:9.1.0"
     implementation "top.mcplugin.lib:module-main:1.0.4-beta32"
+    implementation 'com.xbaimiao:EasyLib:1.0'
 //    implementation "top.mcplugin.lib:module-lang:1.0.4-beta32"
 //    implementation "top.mcplugin.lib:module-nacos:1.0.4-beta32"
 //    implementation "top.mcplugin.lib:module-command:1.0.4-beta32"
@@ -61,6 +62,7 @@ shadowJar {
     relocate('com.zaxxer.hikari', project.group.toString() + ".shadow.hikari")
     relocate('de.tr7zw.changeme.nbtapi', project.group.toString() + ".shadow.nbtapi")
     relocate('com.j256.ormlite', project.group.toString() + ".shadow.ormlite")
+    relocate('com.xbaimiao.easylib', project.group.toString() + ".shadow.easylib")
     relocate('kotlin', project.group.toString() + ".shadow.kotlin")
     relocate('org.intellij', project.group.toString() + ".shadow.intellij")
     relocate('org.jetbrains', project.group.toString() + ".shadow.jetbrains")
