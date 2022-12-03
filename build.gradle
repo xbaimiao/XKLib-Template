@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'org.jetbrains.kotlin.jvm' version '1.7.22'
 }
 
 group 'com.xbaimiao.template'
@@ -45,6 +46,7 @@ dependencies {
 //    implementation "io.papermc:paperlib:1.0.7"
     compileOnly 'public:paper:1.16.5'
     compileOnly fileTree('libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
 shadowJar {
@@ -53,12 +55,15 @@ shadowJar {
     text = text.replace('{ group }', '' + project.group + '.' + project.name)
     text = text.replace('{ name }', '' + project.name)
     file.write text
-    relocate('top.mcplugin.lib', project.group + ".mcplugin.lib")
-    relocate('com.cryptomorin.xseries', project.group + ".shadow.xseries")
-    relocate('io.papermc.lib', project.group + ".shadow.paperlib")
-    relocate('com.zaxxer.hikari', project.group + ".shadow.hikari")
-    relocate('de.tr7zw.changeme.nbtapi', project.group + ".shadow.nbtapi")
-    relocate('com.j256.ormlite', project.group + ".shadow.ormlite")
+    relocate('top.mcplugin.lib', project.group.toString() + ".mcplugin.lib")
+    relocate('com.cryptomorin.xseries', project.group.toString() + ".shadow.xseries")
+    relocate('io.papermc.lib', project.group.toString() + ".shadow.paperlib")
+    relocate('com.zaxxer.hikari', project.group.toString() + ".shadow.hikari")
+    relocate('de.tr7zw.changeme.nbtapi', project.group.toString() + ".shadow.nbtapi")
+    relocate('com.j256.ormlite', project.group.toString() + ".shadow.ormlite")
+    relocate('kotlin', project.group.toString() + ".shadow.kotlin")
+    relocate('org.intellij', project.group.toString() + ".shadow.intellij")
+    relocate('org.jetbrains', project.group.toString() + ".shadow.jetbrains")
     dependencies {
         exclude(dependency("org.slf4j:"))
     }
@@ -77,4 +82,14 @@ processResources {
 
 test {
     useJUnitPlatform()
+}
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
