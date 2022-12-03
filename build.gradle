@@ -29,15 +29,15 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
+    implementation "com.github.cryptomorin:XSeries:9.1.0"
     implementation "top.mcplugin.lib:module-main:1.0.4-beta32"
 //    implementation "top.mcplugin.lib:module-lang:1.0.4-beta32"
 //    implementation "top.mcplugin.lib:module-nacos:1.0.4-beta32"
 //    implementation "top.mcplugin.lib:module-command:1.0.4-beta32"
-    implementation "com.github.cryptomorin:XSeries:9.1.0"
-    // item-nbt
+//    item-nbt
 //    implementation "de.tr7zw:item-nbt-api:2.10.0"
 //    implementation "de.tr7zw:item-nbt-api:2.11.0-20221110.225012-31"
-    // ormlite
+//    ormlite
 //    implementation 'com.j256.ormlite:ormlite-core:6.1'
 //    implementation 'com.j256.ormlite:ormlite-jdbc:6.1'
 //    implementation 'com.zaxxer:HikariCP:4.0.3'
@@ -59,9 +59,11 @@ shadowJar {
     relocate('com.zaxxer.hikari', project.group + ".shadow.hikari")
     relocate('de.tr7zw.changeme.nbtapi', project.group + ".shadow.nbtapi")
     relocate('com.j256.ormlite', project.group + ".shadow.ormlite")
-    relocate('org.slf4j', project.group + ".shadow.slf4j")
+    dependencies {
+        exclude(dependency("org.slf4j:"))
+    }
     exclude("LICENSE")
-    exclude("META-INF/**")
+    exclude("META-INF/*.SF")
 }
 
 processResources {

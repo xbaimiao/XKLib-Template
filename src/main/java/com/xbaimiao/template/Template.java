@@ -1,11 +1,11 @@
-package com.xbaimiao.test;
+package com.xbaimiao.template;
 
 import top.mcplugin.lib.Plugin;
 
 @SuppressWarnings("unused")
-public class Test extends Plugin {
+public class Template extends Plugin {
 
-    public Test() {
+    public Template() {
         super.ignoreScan("shadow");
     }
 
