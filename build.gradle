@@ -39,11 +39,11 @@ dependencies {
 //    implementation "de.tr7zw:item-nbt-api:2.10.0"
 //    implementation "de.tr7zw:item-nbt-api:2.11.0-20221110.225012-31"
 //    ormlite
-    implementation 'com.j256.ormlite:ormlite-core:6.1'
-    implementation 'com.j256.ormlite:ormlite-jdbc:6.1'
-    implementation 'com.zaxxer:HikariCP:4.0.3'
-    implementation "top.mcplugin.lib:module-ormlite:1.0.4-beta32"
-    implementation "io.papermc:paperlib:1.0.7"
+//    implementation 'com.j256.ormlite:ormlite-core:6.1'
+//    implementation 'com.j256.ormlite:ormlite-jdbc:6.1'
+//    implementation 'com.zaxxer:HikariCP:4.0.3'
+//    implementation "top.mcplugin.lib:module-ormlite:1.0.4-beta32"
+//    implementation "io.papermc:paperlib:1.0.7"
     compileOnly 'public:paper:1.16.5'
     compileOnly fileTree('libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
@@ -62,6 +62,8 @@ shadowJar {
     relocate('de.tr7zw.changeme.nbtapi', project.group.toString() + ".shadow.nbtapi")
     relocate('com.j256.ormlite', project.group.toString() + ".shadow.ormlite")
     relocate('kotlin', project.group.toString() + ".shadow.kotlin")
+    relocate('org.intellij', project.group.toString() + ".shadow.intellij")
+    relocate('org.jetbrains', project.group.toString() + ".shadow.jetbrains")
     dependencies {
         exclude(dependency("org.slf4j:"))
     }
